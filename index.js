@@ -1,10 +1,13 @@
 // TODO: this file! :)
-const searchForum = document.querySelector("form");
+const inputNum = document.querySelector("input");
 const addButton = document.querySelector(".submit-btn");
-const inputNum = document.getElementById("number");
 
-searchForum.addEventListener("submit", (event) => {
+const numBank = document.getElementById("numberBank");
+const bank = numBank.querySelector("output");
+
+addButton.addEventListener("click", (event) => {
     event.preventDefault();
-    console.log(inputNum.value);
+
+    bank.append(inputNum.value + " "); 
 });
 
