@@ -1,16 +1,20 @@
 // TODO: this file! :)
+// used to read input from text box/'add number' button.
 const inputNum = document.querySelector("input");
 const addButton = document.querySelector(".submit-btn");
 
+//bank outputs numbers. array data structure to hold banked numbers for logic.
 const bank = document.getElementById("numberBank").querySelector("output");
-let bankedNumbers = [12,13,14,15,16,17];
-bank.append("12,13,14,15,16,17");
+let bankedNumbers = [];
 
+//sortOne and sortAll buttons.
 const sortO = document.getElementById("sortOne");
 const sortA = document.getElementById("sortAll");
+//outputs for the even and odds box.
 const oddOutput = document.getElementById("odds").querySelector("output");
 const evenOutput = document.getElementById("evens").querySelector("output");
 
+//event listener for 'add number' button.
 addButton.addEventListener("click", (event) => {
     event.preventDefault();
     bank.innerText = "";
@@ -18,6 +22,8 @@ addButton.addEventListener("click", (event) => {
     bank.innerText = bankedNumbers;
 });
 
+//event listener for 'sort one' button.
+//starts sort from the ending of the array.
 sortO.addEventListener("click", () => {
     if (bankedNumbers.length !== 0) {
         let popped = bankedNumbers.pop(); 
@@ -30,6 +36,8 @@ sortO.addEventListener("click", () => {
     }
 });
 
+//event listener for 'sort all' button.
+//starts sort from the beginning of the array.
 sortA.addEventListener("click", () => {
     if (bankedNumbers.length !== 0) {
         for (let bankedNumber of bankedNumbers) {
